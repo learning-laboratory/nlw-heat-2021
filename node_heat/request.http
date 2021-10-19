@@ -1,0 +1,5 @@
+POST http://localhost:4000/authenticate
+content-type: application/json
+{
+    "code": "17aa34d5ceec1011a1e6"
+}
