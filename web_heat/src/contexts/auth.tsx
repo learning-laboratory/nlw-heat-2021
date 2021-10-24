@@ -32,7 +32,7 @@ export const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider(props: AuthProvider) {
   const [user, setUser] = useState<User | null>(null);
-  const singInUrl = `https://github.com/login/oauth/authorize?client_id=b82f83afa1b4e3c810c6`;
+  const singInUrl = `${import.meta.env.VITE_SIGNING_GITHUB_URL}?client_id=${import.meta.env.VITE_GITHUB_CLIENT_ID}`;
 
   async function signIn(githubCode: string) {
     const response = await api.post<AuthResponse>("authenticate", {

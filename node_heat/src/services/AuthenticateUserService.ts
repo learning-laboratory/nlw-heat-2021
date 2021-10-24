@@ -15,8 +15,8 @@ interface IUserResponse {
 
 class AuthenticateUserService {
   async execute(code: string) {
-    const accessTokenUrl = "https://github.com/login/oauth/access_token";
-    const userUrl = "https://api.github.com/user";
+    const accessTokenUrl = process.env.GITHUB_ACESS_TOKEN_URL;
+    const userUrl = process.env.GITHUB_USER_URL;
 
     const { data: accessTokenResponse } =
       await axios.post<IAccessTokenResponse>(accessTokenUrl, null, {
